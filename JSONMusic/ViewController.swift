@@ -47,7 +47,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let track = searchResponse?.results[indexPath.row]
-        cell.textLabel?.text = track?.trackName
+        //cell.textLabel?.text = track?.trackName
+        cell.textLabel?.text = track!.artistName + " - " + track!.trackName
         return cell
     }
 }
